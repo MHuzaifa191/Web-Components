@@ -1,0 +1,10 @@
+.chat-app {
+    height: 100%;
+  }
+  
+  .chat-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  

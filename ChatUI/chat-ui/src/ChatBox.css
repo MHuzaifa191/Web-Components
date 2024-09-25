@@ -1,0 +1,68 @@
+.chat-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  /* Add this to your CSS file */
+.btn i {
+    font-size: 1.25rem; /* Adjust the size as needed */
+    vertical-align: middle;
+  }
+
+  .card-body.bg-light.flex-grow-1.overflow-auto {
+    border-radius: 40px;
+    }
+  
+  .small.fw-light {
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  
+  .chat-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 15px;
+  }
+
+  .card-header-border, .card-top {
+    border-bottom: none;
+    border-top: none;
+  }
+
+  .chat-message {
+    border-radius: 50px;
+  }
+  
+  .card-footer {
+    padding: 0.75rem 1rem;
+  }
+  
+  .message.me {
+    text-align: right;
+  }
+  
+  .message .bg-primary {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .message .bg-secondary {
+    background-color: #6c757d;
+  }
+
+  
+  .input-group .send-button {
+    margin-right: 5px;
+    margin-left: 5px;
+    border-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  .input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3), .input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu) {
+    border-top-right-radius: 50px; 
+    border-bottom-right-radius: 50px;
+}

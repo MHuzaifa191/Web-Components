@@ -1,0 +1,58 @@
+.chat-list {
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  span.badge.badge-pill.badge-light.badge-properties {
+    font-size: 0.8em;
+    font-weight:250;
+    color: black;
+    }
+
+    .list-group-item.active .small.text-muted.text-color {
+        color: white !important;
+    }
+  
+  .list-group-item {
+    border-color: #007bff00;
+    border-radius: 20px;
+    margin: 5px;
+    transition: background-color 0.2s ease, color 0.3s ease; /* Add transition for background and color */
+  }
+
+  .list-group-item.active {
+    border-radius: 20px;
+    border-color: #007bff00;
+    color: white;
+  }
+
+
+  .list-group-item.active span.badge.badge-pill.badge-light.badge-properties {
+    color: white; 
+    transition: color 0.3s ease;
+  }
+  
+  ul.list-group.list-group-flush {
+    border-radius: 20px;
+    margin: 10px;
+}
+  
+  .search-input {
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ced4da;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+  }
+  
+  .search-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.25);
+  }
+  
+  .chat-list .badge {
+    font-size: 0.8rem;
+    min-width: 60px;
+  }
+  

@@ -1,0 +1,22 @@
+{
+    "users": [
+      { "id": 1, "name": "Alice", "lastMessage": "Hey there!", "lastActive": "5 mins ago" },
+      { "id": 2, "name": "Bob", "lastMessage": "How are you?", "lastActive": "10 mins ago" },
+      { "id": 3, "name": "Charlie", "lastMessage": "Let's catch up!", "lastActive": "2 hours ago" }
+    ],
+    "messages": {
+      "1": [
+        { "from": "Alice", "content": "Hey, how are you?", "timestamp": "10:00 AM" },
+        { "from": "You", "content": "I'm good! You?", "timestamp": "10:02 AM" }
+      ],
+      "2": [
+        { "from": "Bob", "content": "Long time no see!", "timestamp": "09:45 AM" },
+        { "from": "You", "content": "Yeah! What's up?", "timestamp": "09:50 AM" }
+      ],
+      "3": [
+        { "from": "Charlie", "content": "Let's hang out later", "timestamp": "07:30 AM" },
+        { "from": "You", "content": "Sure! When?", "timestamp": "07:35 AM" }
+      ]
+    }
+  }
+  
