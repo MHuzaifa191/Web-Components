@@ -26,7 +26,15 @@ const ChatBox = ({ user, messages }) => {
   return (
     <div className="col-md-8 chat-box d-flex flex-column">
       <div className="card-header card-header-border bg-white d-flex justify-content-between align-items-center">
-        <h5 className="mt-3 mb-3">{user.name}</h5>
+        <div className="d-flex align-items-center">
+          <img 
+            src={user.profilePic} 
+            alt={user.name} 
+            className="rounded-circle profile-pic" 
+            style={{ width: '40px', height: '40px', marginRight: '10px' }} 
+          />
+          <h5 className="mt-3 mb-3">{user.name}</h5>
+        </div>
         <span className="text-muted fw-light">Last seen {user.lastActive}</span>
       </div>
       <div className="card-body bg-light flex-grow-1 overflow-auto">

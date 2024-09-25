@@ -1,22 +1,39 @@
 {
-    "users": [
-      { "id": 1, "name": "Alice", "lastMessage": "Hey there!", "lastActive": "5 mins ago" },
-      { "id": 2, "name": "Bob", "lastMessage": "How are you?", "lastActive": "10 mins ago" },
-      { "id": 3, "name": "Charlie", "lastMessage": "Let's catch up!", "lastActive": "2 hours ago" }
-    ],
-    "messages": {
-      "1": [
-        { "from": "Alice", "content": "Hey, how are you?", "timestamp": "10:00 AM" },
-        { "from": "You", "content": "I'm good! You?", "timestamp": "10:02 AM" }
-      ],
-      "2": [
-        { "from": "Bob", "content": "Long time no see!", "timestamp": "09:45 AM" },
-        { "from": "You", "content": "Yeah! What's up?", "timestamp": "09:50 AM" }
-      ],
-      "3": [
-        { "from": "Charlie", "content": "Let's hang out later", "timestamp": "07:30 AM" },
-        { "from": "You", "content": "Sure! When?", "timestamp": "07:35 AM" }
-      ]
+  "users": [
+    { 
+      "id": 1, 
+      "name": "Alice", 
+      "lastMessage": "Hey there!", 
+      "lastActive": "5 mins ago",
+      "profilePic": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    { 
+      "id": 2, 
+      "name": "Bob", 
+      "lastMessage": "How are you?", 
+      "lastActive": "10 mins ago",
+      "profilePic": "https://res.cloudinary.com/dsd1isfdb/image/upload/v1640367093/picofme/examples/example_1_xixqoj.jpg"
+    },
+    { 
+      "id": 3, 
+      "name": "Charlie", 
+      "lastMessage": "Let's catch up!", 
+      "lastActive": "2 hours ago",
+      "profilePic": "https://thumbs.wbm.im/pw/small/769696e34b3e45081d14212795d01414.jpg"
     }
+  ],
+  "messages": {
+    "1": [
+      { "from": "Alice", "content": "Hey, how are you?", "timestamp": "10:00 AM" },
+      { "from": "You", "content": "I'm good! You?", "timestamp": "10:02 AM" }
+    ],
+    "2": [
+      { "from": "Bob", "content": "Long time no see!", "timestamp": "09:45 AM" },
+      { "from": "You", "content": "Yeah! What's up?", "timestamp": "09:50 AM" }
+    ],
+    "3": [
+      { "from": "Charlie", "content": "Let's hang out later", "timestamp": "07:30 AM" },
+      { "from": "You", "content": "Sure! When?", "timestamp": "07:35 AM" }
+    ]
   }
-  
+}

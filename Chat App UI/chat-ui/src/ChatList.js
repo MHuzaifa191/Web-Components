@@ -21,9 +21,12 @@ const ChatList = ({ users, onSelectUser, selectedUserId }) => {
             className={`list-group-item list-group-item-action d-flex justify-content-between align-items-center ${selectedUserId === user.id ? 'active' : ''}`}
             onClick={() => onSelectUser(user.id)}
           >
-            <div>
-              <strong>{user.name}</strong>
-              <div className="small text-muted text-color">{user.lastMessage}</div>
+            <div className="d-flex align-items-center">
+              <img src={user.profilePic} alt={`${user.name}'s profile`} className="profile-pic" />
+              <div className="ml-2">
+                <strong>{user.name}</strong>
+                <div className="small text-muted text-color">{user.lastMessage}</div>
+              </div>
             </div>
             <span className="badge badge-pill badge-light badge-properties">{user.lastActive}</span>
           </li>

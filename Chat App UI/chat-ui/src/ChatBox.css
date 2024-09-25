@@ -65,4 +65,12 @@
   .input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3), .input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu) {
     border-top-right-radius: 50px; 
     border-bottom-right-radius: 50px;
+ }
+
+ .profile-pic {
+  width: 40px; /* Fixed width */
+  height: 40px; /* Fixed height */
+  object-fit: cover; /* Ensures the image covers the circle without stretching */
+  border-radius: 50%; /* Makes sure the image is circular */
+  margin-right: 10px; /* Space between image and name */
 }
