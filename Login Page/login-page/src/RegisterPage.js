@@ -1,20 +1,80 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './RegisterPage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGoogle, faFacebook, faApple } from '@fortawesome/free-brands-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const RegisterPage = () => {
+  const navigate = useNavigate();
+  const [userData, setUserData] = useState({
+    fullName: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
+  });
+
+  // Handle input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setUserData({ ...userData, [name]: value });
+  };
+
+  // Handle the register button click
+  const handleRegister = () => {
+    const { fullName, email, password, confirmPassword } = userData;
+
+    // Simple validation
+    if (!fullName || !email || !password) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      alert("Passwords don't match!");
+      return;
+    }
+
+    // Save user data (including fullName) to localStorage
+    localStorage.setItem('userData', JSON.stringify({ fullName, email, password }));
+
+    alert('Registration successful!');
+
+    // Redirect to login page
+    navigate('/');
+  };
+
   return (
     <div className="register-container">
       <h1>Create an Account</h1>
       <div className="input-container">
-        <input type="text" placeholder="Full Name" />
-        <input type="email" placeholder="Email Address" />
-        <input type="password" placeholder="Password" />
-        <input type="password" placeholder="Confirm Password" />
-        <button className="continue-button">Sign Up</button>
+        <input
+          type="text"
+          placeholder="Full Name"
+          name="fullName"
+          onChange={handleInputChange}
+        />
+        <input
+          type="email"
+          placeholder="Email Address"
+          name="email"
+          onChange={handleInputChange}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          onChange={handleInputChange}
+        />
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          name="confirmPassword"
+          onChange={handleInputChange}
+        />
+        <button className="continue-button" onClick={handleRegister}>
+          Sign Up
+        </button>
       </div>
       <div className="or-container">
         <div className="line"></div>

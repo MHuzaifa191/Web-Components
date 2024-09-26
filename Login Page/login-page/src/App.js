@@ -1,14 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LoginPage from './LoginPage';  // Ensure this is the correct path to your LoginPage file
-import RegisterPage from './RegisterPage';  // Add this line to import RegisterPage
+import LoginPage from './LoginPage'; 
+import RegisterPage from './RegisterPage';
+import Dashboard from './Dashboard';  
 
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} /> {/* Ensure the RegisterPage is used here */}
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );
