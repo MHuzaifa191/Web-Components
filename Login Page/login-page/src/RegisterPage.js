@@ -1,18 +1,20 @@
 import React from 'react';
-import './LoginPage.css';
+import './RegisterPage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGoogle, faFacebook, faApple } from '@fortawesome/free-brands-svg-icons';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link } from 'react-router-dom';
 
-const LoginPage = () => {
+const RegisterPage = () => {
   return (
-    <div className="login-container">
-      <h1>Log in</h1>
+    <div className="register-container">
+      <h1>Create an Account</h1>
       <div className="input-container">
-        <input type="text" placeholder="Phone Number or Email Address" />
+        <input type="text" placeholder="Full Name" />
+        <input type="email" placeholder="Email Address" />
         <input type="password" placeholder="Password" />
-        <button className="continue-button">Continue</button>
+        <input type="password" placeholder="Confirm Password" />
+        <button className="continue-button">Sign Up</button>
       </div>
       <div className="or-container">
         <div className="line"></div>
@@ -23,28 +25,27 @@ const LoginPage = () => {
       <div className="social-login-container">
         <button className="social-login-button">
           <FontAwesomeIcon icon={faEnvelope} className="icon" />
-          Login with Email
+          Sign Up with Email
         </button>
         <button className="social-login-button">
           <FontAwesomeIcon icon={faGoogle} className="icon" />
-          Login with Google
+          Sign Up with Google
         </button>
         <button className="social-login-button">
           <FontAwesomeIcon icon={faFacebook} className="icon" />
-          Login with Facebook
+          Sign Up with Facebook
         </button>
         <button className="social-login-button">
           <FontAwesomeIcon icon={faApple} className="icon" />
-          Login with Apple
+          Sign Up with Apple
         </button>
       </div>
-      <div className="create-account-container">
-        <span>Don't have an account?</span>
-        {/* Link to the register page */}
-        <Link to="/register"> Create an Account</Link>
+      <div className="login-account-container">
+        <span>Already have an account?</span>
+        <Link to="/"> Log In </Link>
       </div>
     </div>
   );
 };
 
-export default LoginPage;
+export default RegisterPage;
