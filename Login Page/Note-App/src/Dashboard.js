@@ -24,6 +24,8 @@ const Dashboard = () => {
     }
   }, [navigate, userData]);
 
+
+  
   const handleAddNote = () => {
     if (noteTitle.trim() === '' || noteContent.trim() === '') {
       alert("Both title and content can't be empty");
