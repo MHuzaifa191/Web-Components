@@ -1,4 +1,4 @@
-import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faTrash, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -14,6 +14,7 @@ const Dashboard = () => {
   const [editTitle, setEditTitle] = useState('');
   const [editContent, setEditContent] = useState('');
   const [isBlurred, setIsBlurred] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     if (!userData) {
@@ -24,8 +25,6 @@ const Dashboard = () => {
     }
   }, [navigate, userData]);
 
-
-  
   const handleAddNote = () => {
     if (noteTitle.trim() === '' || noteContent.trim() === '') {
       alert("Both title and content can't be empty");
@@ -65,6 +64,11 @@ const Dashboard = () => {
     localStorage.setItem('userNotes', JSON.stringify(updatedNotes));
   };
 
+  const filteredNotes = notes.filter(note =>
+    note.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    note.content.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="dashboard-container">
       {userData && <h1>Welcome, {userData.fullName}!</h1>}
@@ -89,13 +93,25 @@ const Dashboard = () => {
         </button>
       </div>
 
+      {/* Search Bar */}
+      <div className="search-bar-container">
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          placeholder="Search notes..."
+          className="search-input"
+        />
+        <FontAwesomeIcon icon={faSearch} className="search-icon" />
+      </div>
+
       <div className={`notes-container ${isBlurred ? 'blurred' : ''}`}>
         <h2>Your Notes</h2>
-        {notes.length === 0 ? (
+        {filteredNotes.length === 0 ? (
           <p>No notes available. Start by adding one!</p>
         ) : (
           <div className="notes-list">
-            {notes.map((note, index) => (
+            {filteredNotes.map((note, index) => (
               <div key={index} className="note-card">
                 {isEditing === index ? (
                   <div className="edit-container">
