@@ -2,7 +2,7 @@ import { faEdit, faTrash, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Dashboard.css'; // Ensure this CSS file has the styling
+import './Dashboard.css';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -15,6 +15,7 @@ const Dashboard = () => {
   const [editContent, setEditContent] = useState('');
   const [isBlurred, setIsBlurred] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const [viewModeNote, setViewModeNote] = useState(null); // For modal viewing
 
   useEffect(() => {
     if (!userData) {
@@ -64,6 +65,14 @@ const Dashboard = () => {
     localStorage.setItem('userNotes', JSON.stringify(updatedNotes));
   };
 
+  const handleViewNote = (note) => {
+    setViewModeNote(note);
+  };
+
+  const handleCloseViewMode = () => {
+    setViewModeNote(null);
+  };
+
   const filteredNotes = notes.filter(note =>
     note.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     note.content.toLowerCase().includes(searchTerm.toLowerCase())
@@ -105,14 +114,14 @@ const Dashboard = () => {
         <FontAwesomeIcon icon={faSearch} className="search-icon" />
       </div>
 
-      <div className={`notes-container ${isBlurred ? 'blurred' : ''}`}>
+      <div className={`notes-container ${isBlurred && isEditing === null ? 'blurred' : ''}`}>
         <h2>Your Notes</h2>
         {filteredNotes.length === 0 ? (
           <p>No notes available. Start by adding one!</p>
         ) : (
           <div className="notes-list">
             {filteredNotes.map((note, index) => (
-              <div key={index} className="note-card">
+              <div key={index} className={`note-card ${isEditing === index ? 'not-blur' : ''}`}>
                 {isEditing === index ? (
                   <div className="edit-container">
                     <input
@@ -136,7 +145,15 @@ const Dashboard = () => {
                 ) : (
                   <>
                     <h3 className='note-title'>{note.title}</h3>
-                    <p>{note.content}</p>
+                    <div className="note-content">
+                      <p>{note.content}</p>
+                    </div>
+                    <div className="fade-overlay"></div>
+                    {note.content.length > 200 && (
+                      <button onClick={() => handleViewNote(note)} className="view-more-button">
+                        View More
+                      </button>
+                    )}
                     <div className="note-actions">
                       <FontAwesomeIcon 
                         icon={faEdit} 
@@ -156,6 +173,17 @@ const Dashboard = () => {
           </div>
         )}
       </div>
+
+      {/* Modal for viewing note in a larger window */}
+      {viewModeNote && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h3>{viewModeNote.title}</h3>
+            <p>{viewModeNote.content}</p>
+            <button onClick={handleCloseViewMode} className="close-modal-button">Close</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

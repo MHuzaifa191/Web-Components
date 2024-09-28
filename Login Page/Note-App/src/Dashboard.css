@@ -115,15 +115,44 @@
 
 /* Note card styling */
 .note-card {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  text-align: center;
   position: relative;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensure overflow is hidden */
+  max-height: 300px; /* Increase max height to provide space for the button */
   transition: transform 0.3s ease;
 }
+
+/* Note content styling */
+.note-content p {
+  margin: 0;
+  padding-right: 10px; /* Padding for spacing */
+  line-height: 1.5;
+  max-height: 220px; /* Max height for 10 lines */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 10; /* Limit to 10 lines */
+  -webkit-box-orient: vertical;
+  padding-bottom: 30px; /* Add padding to the bottom for the button space */
+}
+
+.fade-overlay {
+  position: absolute;
+  bottom: 0; /* Position the overlay at the bottom */
+  left: 0; /* Align the overlay to the left */
+  width: 100%; /* Full width */
+  height: 80px; /* Total height of the overlay */
+  background: linear-gradient(to top, rgba(255, 255, 255, 1) 30px, rgba(255, 255, 255, 0)); /* Solid color to transparent */
+  pointer-events: none; /* Ignore pointer events to ensure the fade is passive */
+}
+
+
+
 
 /* Note title styling */
 .note-card .note-title {
@@ -273,4 +302,70 @@
 
 .search-icon:hover {
   color: #4CAF50;
+}
+
+/* Modal overlay styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto; /* Allow scrolling if content exceeds height */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  line-height: 1.5; /* Increase line height for readability */
+  word-wrap: break-word; /* Break long words to avoid overflow */
+}
+
+.modal-content p {
+  margin-bottom: 15px; /* Add space between paragraphs */
+}
+
+
+.close-modal-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-modal-button:hover {
+  background-color: #45a049;
+}
+
+.view-more-button {
+  background: none;
+  border: none;
+  color: #007BFF;
+  cursor: pointer;
+  position: absolute;
+  bottom: 15px; /* Position it at the bottom with some margin */
+  right: 15px;
+  padding: 5px;
+  font-size: 0.9rem;
+}
+
+.view-more-button:hover {
+  text-decoration: underline;
+}
+
+.not-blur {
+  filter: none !important;
+  transform: none !important;
 }
