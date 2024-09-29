@@ -382,6 +382,9 @@ html, body {
 
 @media (min-width: 1024px) {
   .dashboard-container {
-    min-width: 200vh;  /* Adjust container width for larger screens */
+    width: 100vw;  /* Make the container fill the entire viewport width */
+    max-width: 100%;  /* Prevent the container from exceeding the viewport width */
+    min-width: 100vw;  /* Ensure minimum width is the full width of the viewport */
+    margin: 0 auto;  /* Center the container horizontally */
   }
 }
