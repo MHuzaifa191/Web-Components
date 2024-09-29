@@ -133,7 +133,8 @@ html, body {
   background-color: #fff;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden; /* Ensure overflow is hidden */
-  max-height: 300px; /* Increase max height to provide space for the button */
+  min-height: 200px;
+  max-height: 400px; /* Increase max height to provide space for the button */
   transition: transform 0.3s ease;
 }
 
