@@ -1,10 +1,10 @@
 html, body {
   margin: 0;
   padding: 0;
-  min-height: 100vh; /* Full viewport height */
-  height: auto; /* Allow body to grow taller */
-  box-sizing: border-box; /* Include padding in height calculations */
-  overflow-x: hidden; /* Avoid horizontal scrolling */
+  min-height: 100vh;
+  height: auto; 
+  box-sizing: border-box; 
+  overflow-x: hidden; 
 }
 
 /* Overall container */
@@ -13,7 +13,6 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
   padding: 20px;
   background-color: #f0f4f8;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -379,4 +378,10 @@ html, body {
 .not-blur {
   filter: none !important;
   transform: none !important;
+}
+
+@media (min-width: 1024px) {
+  .dashboard-container {
+    min-width: 200vh;  /* Adjust container width for larger screens */
+  }
 }
