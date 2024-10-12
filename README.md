@@ -1,12 +1,15 @@
 ### React Components
 
-This repository contains projects and components created during my ReactJS internship at Realz Solutions. The primary languages used are JavaScript, CSS, and HTML.
+This repository contains projects and components created during my internship at Realz Solutions. MERN stack was used to develop web applications.
 
 #### Repository Details
-- **Description:** Projects and components I created in my ReactJS internship at Realz Solutions.
+- **Description:** Projects and components I created in my MERN internship at Realz Solutions.
 - **Default Branch:** main
-- **Visibility:** Private
-- **Repository URL:** [React-Components](https://github.com/MHuzaifa191/React-Components)
+
+#### Other Project Contributions
+
+- **Code Converter:** Developed a dynamic code conversion app which can convert any coding language to another. [Frontend](https://github.com/umarqazii/code-converter-fe) / [Backend](https://github.com/umarqazii/code-converter-be)
+
 
 
 ### Installation and Usage Instructions
@@ -15,6 +18,7 @@ This repository contains projects and components created during my ReactJS inter
    ```bash
    git clone https://github.com/MHuzaifa191/React-Components.git
    cd React-Components
+   cd Project-Folder # e.g. Notes App
    ```
 
 2. **Install dependencies:**
@@ -27,10 +31,6 @@ This repository contains projects and components created during my ReactJS inter
    npm start
    ```
 
-4. **Build the application:**
-   ```bash
-   npm run build
-   ```
 
 ### Contact
 For any questions or inquiries, please contact [Muhammad Huzaifa](mailto:m.huz4if4@gmail.com).
