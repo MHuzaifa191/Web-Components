@@ -2,10 +2,6 @@
 
 This repository contains projects and components created during my internship at Realz Solutions. MERN stack was used to develop web applications.
 
-#### Repository Details
-- **Description:** Projects and components I created in my MERN internship at Realz Solutions.
-- **Default Branch:** main
-
 #### Other Project Contributions
 
 - **Code Converter:** Developed a dynamic code conversion app which can convert any coding language to another. [Frontend](https://github.com/umarqazii/code-converter-fe) / [Backend](https://github.com/umarqazii/code-converter-be)
