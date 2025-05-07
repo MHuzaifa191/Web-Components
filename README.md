@@ -1,6 +1,6 @@
 ### React Components
 
-This repository contains projects and components created during my internship at Realz Solutions. MERN stack was used to develop web applications.
+This repository contains projects and components created during my internship at Realz Solutions. The MERN stack was used to develop web applications.
 
 #### Other Project Contributions
 
